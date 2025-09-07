@@ -1,0 +1,26 @@
+dataset:
+  dataset_name: MVTec-AD-2  
+  original_data_path: ./data/mvtec_ad_2 
+  data_path: ./mvtec_ad_2_processed 
+  mvtecad2_class_list: all
+  test_type: test_public
+crop:
+  window_size: 1024
+  desired_overlap: 0.1
+save:
+  save_dir: ./saved_weights
+  amap_savedir: ./anomaly_map_results
+  bin_savedir: ./binary_map_results
+model: 
+  encoder: dinov2reg_vit_base_14
+  input_size: 518
+  crop_size: 518
+  INP_num: 6
+training:
+  total_epochs: 200
+  batch_size: 16
+  train_state: True
+testing:
+  test_state: True
+  eval_pub: True
+device: 0
